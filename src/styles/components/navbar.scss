@@ -1,0 +1,22 @@
+.navbar{
+  background-color: green;
+  height:5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;  
+  padding: 0 5rem;
+  
+  &__link{
+
+    text-decoration: none;
+
+    &:nth-child(2){
+      margin-right: 5rem;
+    }
+
+    &--home{
+      margin-right: auto;
+
+    }
+  }
+}
