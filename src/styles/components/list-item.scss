@@ -1,0 +1,7 @@
+.list-item{
+    padding: 1rem;
+
+    &:nth-child(2n) {
+        color: var(--color-secondary);
+    }
+}

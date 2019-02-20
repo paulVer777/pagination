@@ -1,0 +1,21 @@
+.pagination-wrapper{
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+}
+
+.pagination{
+  width:30%;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__link{
+    text-decoration: none;
+    padding: 0.5rem;
+    color:var(--color-black);
+  }
+
+}
+

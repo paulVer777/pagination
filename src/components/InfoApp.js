@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 
 import Pagination from './Pagination';
 import List from './List';
+import  Input from './Input';
 
 export default class InfoApp extends Component {
 
   state={
     countries:[],
     countriesMod:[],
-    countriesFiltered:[],
     filter:""
   }
 
@@ -17,10 +17,7 @@ export default class InfoApp extends Component {
         .then(response => response.json())
         .then(response => {
           this.setState(() => ({ countries:response}),
-            ()=>{
-              // this.setState(() => ({ countriesMod:this.calcPart()}))
-              this.calcPart()
-            })
+            ()=>this.calcPart())
         })  
     }
 
@@ -29,7 +26,6 @@ export default class InfoApp extends Component {
     }
 
      filterArr = (arr) => {
-       console.log('working')
        const filters = this.state.filter
        return arr.filter((value, index) => value.name.toLowerCase().includes(filters.toLowerCase()))
      }
@@ -49,7 +45,7 @@ export default class InfoApp extends Component {
       return (
         <div>
           <List page={this.props.match.params.page} data={this.state.countriesMod} />
-          <input onChange={this.onInputHandler} />
+          <Input change={this.onInputHandler}/>
           <Pagination pages={ this.state.countries.length/5 } />
         </div>
       )

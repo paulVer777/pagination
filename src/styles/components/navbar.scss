@@ -1,5 +1,5 @@
 .navbar{
-  background-color: green;
+  background-color: var(--color-primary);
   height:5rem;
   display: flex;
   justify-content: flex-end;
@@ -9,14 +9,21 @@
   &__link{
 
     text-decoration: none;
+    color:var(--color-white);
+    opacity: 0.9;
+    
+    &:hover{
+      transform: translateY(-0.2rem);
+      transition: all 0.3s;
+      opacity: 1;
+    }
 
     &:nth-child(2){
-      margin-right: 5rem;
+      margin-right:5rem;
     }
 
     &--home{
       margin-right: auto;
-
     }
   }
 }

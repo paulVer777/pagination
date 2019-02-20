@@ -1,18 +1,22 @@
-import React, { Component } from 'react'
+import React from 'react';
 
-export default class List extends Component {
+import ListItem from './ListItem';
 
-  render() {
-    return (
-      <div>
-        <h1>List</h1>
+const List = (props) => (
+
+  <ul className='list'>
           {
-
-            this.props.data.length <1 ? <p>page not found </p>
+            props.data.length <1 ? <p>Page not found</p>
             :
-            this.props.data.map((value,index) => <div>{value.name}</div>)
+            props.data.map((value,index) => <ListItem name={value.name}/>)
           }
-      </div>
-    )
-  }
-}
+      </ul>
+)
+
+export default List
+      
+   
+  
+
+
+

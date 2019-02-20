@@ -3,18 +3,13 @@ html {
 }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: $m-size;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 2rem;
 }
 
-button {
-  cursor: pointer;
-}
-
-button:disabled {
-  cursor: default;
-}
-
-.is-active {
+a.is-active {
   font-weight: bold;
+  color:tomato;
 }
+
+
