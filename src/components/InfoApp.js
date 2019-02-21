@@ -36,9 +36,13 @@ export default class InfoApp extends Component {
     }
 
     calcPart(){
+      // const startNum = (this.props.match.params.page * 5) - 5
+      // const arr = this.state.countries.slice(startNum, startNum + 5)
+      // this.setState((prevState) => ({countriesMod:this.filterArr(arr)}))
+      const arr=this.filterArr(this.state.countries)
       const startNum = (this.props.match.params.page * 5) - 5
-      const arr = this.state.countries.slice(startNum, startNum + 5)
-      this.setState((prevState) => ({countriesMod:this.filterArr(arr)}))
+      const arr2 = arr.slice(startNum, startNum + 5)
+      this.setState((prevState) => ({ countriesMod:arr2}),() => console.log(this.state))
     }
 
     render() {
