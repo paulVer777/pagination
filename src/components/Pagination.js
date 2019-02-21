@@ -7,7 +7,7 @@ export default class Pagination extends Component {
   generateLinks = () => {
     const links = []
       for(let i=0; i<this.props.pages;i++){
-        links[i]=<NavLink className='pagination__link' activeClassName='is-active' to={`/list/${i+1}`}>{i+1}</NavLink>
+        links[i]=<NavLink className='pagination__link' activeClassName='is-active' to={`/list/${i+1}`} key={i}>{i+1}</NavLink>
       }
       return links
   }

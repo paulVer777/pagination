@@ -8,7 +8,7 @@ const List = (props) => (
           {
             props.data.length <1 ? <p>Page not found</p>
             :
-            props.data.map((value,index) => <ListItem name={value.name}/>)
+            props.data.map((value,index) => <ListItem name={value.name} key={index}/>)
           }
       </ul>
 )
