@@ -44,8 +44,11 @@ export default class InfoApp extends Component {
       const startNum = (start * 5) - 5
       const arr2 = arr.slice(startNum, startNum + 5)
       
-      this.setState((prevState) => ({ countriesMod:arr2,pages}))
-      
+      this.setState((prevState) => ({
+        countriesMod: arr2,
+        pages
+      }))
+      start === 1&&this.props.history.push('/list/1')
     }
 
     render() {
