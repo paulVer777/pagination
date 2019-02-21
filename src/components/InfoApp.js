@@ -38,6 +38,7 @@ export default class InfoApp extends Component {
 
     calcPart(){
       const arr=this.filterArr(this.state.countries)
+      console.log(arr)
       const pages=Math.ceil(arr.length/5)
       const startNum = (this.props.match.params.page * 5) - 5
       const arr2 = arr.slice(startNum, startNum + 5)
