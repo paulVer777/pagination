@@ -9,7 +9,8 @@ export default class InfoApp extends Component {
   state={
     countries:[],
     countriesMod:[],
-    filter:""
+    filter:"",
+    pages:null
   }
 
     componentDidMount() {
@@ -36,9 +37,14 @@ export default class InfoApp extends Component {
     }
 
     calcPart(){
+      const arr=this.filterArr(this.state.countries)
+      console.log(arr)
+      const pages=Math.ceil(arr.length/5)
       const startNum = (this.props.match.params.page * 5) - 5
-      const arr = this.state.countries.slice(startNum, startNum + 5)
-      this.setState((prevState) => ({countriesMod:this.filterArr(arr)}))
+      const arr2 = arr.slice(startNum, startNum + 5)
+      
+      this.setState((prevState) => ({ countriesMod:arr2,pages}))
+      
     }
 
     render() {
@@ -46,7 +52,7 @@ export default class InfoApp extends Component {
         <div>
           <List page={this.props.match.params.page} data={this.state.countriesMod} />
           <Input change={this.onInputHandler}/>
-          <Pagination pages={ this.state.countries.length/5 } />
+          <Pagination pages={ this.state.pages } />
         </div>
       )
     }
