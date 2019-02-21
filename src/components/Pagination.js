@@ -20,7 +20,6 @@ export default class Pagination extends Component {
             this.generateLinks()
           }
         </div>
-        
       </div>
     )
   }
