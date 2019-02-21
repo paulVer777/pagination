@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import Pagination from './Pagination';
 import List from './List';
@@ -33,14 +34,14 @@ export default class InfoApp extends Component {
 
     onInputHandler = (event) =>{
       const text=event.target.value
-      this.setState(() => ({filter:text}),() => this.calcPart())
+      this.setState(() => ({filter:text}),() => this.calcPart(1))
     }
 
-    calcPart(){
+    calcPart(start = this.props.match.params.page) {
       const arr=this.filterArr(this.state.countries)
       console.log(arr)
       const pages=Math.ceil(arr.length/5)
-      const startNum = (this.props.match.params.page * 5) - 5
+      const startNum = (start * 5) - 5
       const arr2 = arr.slice(startNum, startNum + 5)
       
       this.setState((prevState) => ({ countriesMod:arr2,pages}))
